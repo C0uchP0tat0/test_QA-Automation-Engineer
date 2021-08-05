@@ -1,8 +1,5 @@
-"""Реализовать программу, осуществляющую копирование файлов в соответствии с конфигурационным файлом.
-Конфигурационный файл должен иметь формат xml. 
-Для каждого файла в конфигурационном файле должно быть указано его имя, 
-исходный путь и путь, по которому файл требуется скопировать."""
-
+#!/usr/bin/env python3
+"""Implement a program that copies files in accordance with the configuration file."""
 import shutil as sh
 import xml.etree.ElementTree as ET
 import os
