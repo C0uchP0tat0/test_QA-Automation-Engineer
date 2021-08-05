@@ -11,10 +11,12 @@ Config_file = "config.xml"
 
 def copy_config_xml(file:str):
 
+    #Checking whether the XML file is
     if file[-4:].lower() != ".xml":
         print('Check the file extension.\nThe program supports only "xml" format files"')
         return
 
+    #Getting data from a file to copy
     root = ET.parse(Config_file).getroot() 
     for tag in root.findall('file'):
         try:
@@ -26,7 +28,7 @@ def copy_config_xml(file:str):
                 os.makedirs(value_destination_path) 
             sh.copy(target_path, value_destination_path)
         except PermissionError:
-            print("{} Access denied, run the application as an administrator".format(PermissionError))
+            print("'{}' Access denied, run the application as an administrator".format(value_destination_path))
             continue
         except FileNotFoundError:
             print('The path {} is not exist.'.format(target_path))
